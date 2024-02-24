@@ -29,7 +29,8 @@
 			"version": "latest"
 		},
 		"ghcr.io/rio/features/k3d:1": {},
-		"ghcr.io/lumenpink/devcontainer-features/bun:0": {}
+		"ghcr.io/lumenpink/devcontainer-features/bun:0": {},
+		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
 	}
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
