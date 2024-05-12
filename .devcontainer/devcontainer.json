@@ -1,31 +1,44 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/kubernetes-helm-minikube
 {
-	"name": "Kubernetes - Kubernetes-in-Docker",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": { 
-		"dockerfile": "Dockerfile" 
-	},
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "terminal.integrated.shell.linux": "/bin/bash",
-                "workbench.iconTheme": "vscode-icons",
-                "typescript.enablePromptUseWorkspaceTsdk": true,
-                "editor.defaultFormatter": "esbenp.prettier-vscode",
-                "editor.formatOnSave": true,
-                "editor.codeActionsOnSave": {
-                  "source.fixAll.eslint": "explicit"
-                }
-            },
-            "extensions": [
-                "dbaeumer.vscode-eslint",
-                "esbenp.prettier-vscode",
-                "vscode-icons-team.vscode-icons",
-                "EditorConfig.EditorConfig",
-                "oven.bun-vscode",
-				"hashicorp.terraform"
-            ]
+  "name": "Kubernetes - Kubernetes-in-Docker",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "dockerVersion": "latest",
+      "upgradePackages": true,
+      "enableNonRootDocker": true,
+      "moby": true
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "latest",
+      "helm": "latest",
+      "minikube": "latest"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {}
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "workbench.iconTheme": "vscode-icons",
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
         }
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "vscode-icons-team.vscode-icons",
+        "EditorConfig.EditorConfig",
+        "oven.bun-vscode",
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-docker"
+      ]
     }
+  }
 }
