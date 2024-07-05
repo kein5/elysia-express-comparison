@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "hashicorp.terraform",
+        "EditorConfig.EditorConfig",
+        "vscode-icons-team.vscode-icons",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-wsl",
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-docker",
+        "donjayamanne.githistory",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "oderwat.indent-rainbow",
+        "Orta.vscode-jest",
+        "esbenp.prettier-vscode",
+        "rangav.vscode-thunder-client"
+    ]
+}
