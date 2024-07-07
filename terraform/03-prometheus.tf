@@ -19,6 +19,4 @@ resource "kubernetes_manifest" "monitoring" {
   ]
   for_each = local.yaml_files
   manifest = provider::kubernetes::manifest_decode(file(each.value))
-  # manifest = provider::kubernetes::manifest_decode_multi(join("\n", toset(file(each.value))))
-
 }
