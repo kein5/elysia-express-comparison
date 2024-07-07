@@ -11,3 +11,7 @@
    ```
    cd terraform && terraform init && terraform apply -auto-approve
    ```
+3. expose the ingress port
+   ```
+   kubectl port-forward --pod-running-timeout=24h -n ingress-nginx service/ingress-nginx-controller :80 &
+   ```
