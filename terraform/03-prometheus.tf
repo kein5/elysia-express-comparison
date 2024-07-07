@@ -18,7 +18,6 @@ resource "kubernetes_manifest" "monitoring" {
   # prometheus for collecting various metrics.
   # prometheus-operator for automating management of prometheus.
   depends_on = [
-    minikube_cluster.docker,
     helm_release.prometheus_operator_crds,
   ]
 

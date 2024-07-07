@@ -6,10 +6,6 @@ terraform {
   required_version = ">=1.8.0"
 
   required_providers {
-    minikube = {
-      source  = "scott-the-programmer/minikube"
-      version = "~>0.3.10"
-    }
     grafana = {
       source  = "grafana/grafana"
       version = "~>3.2.1"
@@ -23,8 +19,4 @@ terraform {
       version = "~>2.31.0"
     }
   }
-}
-
-provider "minikube" {
-  kubernetes_version = local.kubernetes_version
 }
