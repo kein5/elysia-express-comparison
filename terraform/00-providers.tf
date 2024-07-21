@@ -1,5 +1,5 @@
 locals {
-  kubernetes_version = "v1.29.2"
+  kubernetes_version = "v1.30.3"
 }
 
 terraform {

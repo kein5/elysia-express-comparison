@@ -19,7 +19,7 @@
       --nodes=1 \
       --memory='2g' \
       --cpus=2 \
-      --kubernetes-version=v1.29.2 \
+      --kubernetes-version=v1.30.3 \
       --apiserver-port=8443 \
       --addons=[default-storageclass,storage-provisioner,ingress,dashboard,metrics-server]
    ```
@@ -34,4 +34,6 @@
 
    ```bash
    kubectl port-forward --pod-running-timeout=24h -n ingress-nginx service/ingress-nginx-controller :80 &
+   kubectl port-forward service/kubernetes-dashboard 9281:80 -n kubernetes-dashboard &
+   kubectl port-forward service/grafana 9282:80 -n monitoring &
    ```

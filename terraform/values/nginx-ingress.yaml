@@ -1,0 +1,16 @@
+# ---
+# controller:
+#   ingressClassResource:
+#     name: external-nginx
+#   ingressClassByName: true
+#   ingressClassName: "custom-nginx"
+#   resources:
+#     limits:
+#       cpu: 1000m
+#       memory: 512Mi
+#     requests:
+#       cpu: 200m
+#       memory: 256Mi
+#   service:
+#     type: LoadBalancer
+#     externalTrafficPolicy: Local
