@@ -15,7 +15,14 @@
       "helm": "latest",
       "minikube": "latest"
     },
-    "ghcr.io/devcontainers/features/terraform:1": {}
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest",
+      "terragrunt": "latest",
+      "installTerraformDocs": true
+    },
+    "ghcr.io/devcontainers-contrib/features/kind:1": {
+      "version": "latest"
+    }
   },
   "remoteUser": "vscode",
   "customizations": {
