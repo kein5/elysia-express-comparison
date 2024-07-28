@@ -11,29 +11,34 @@
 
    assuming the following steps to be run in the devcontainer built in this step.
 
-2. create minikube cluster
+2. git setting
+
+   set the workspace as a safe directory.
+
+   ```
+   git config --global --add safe.directory /workspaces/elysia-express-comparison
+   ```
+
+3. create minikube cluster
 
    ```bash
    minikube start \
       --driver=docker \
       --nodes=1 \
-      --memory='2g' \
+      --memory='4g' \
       --cpus=2 \
       --kubernetes-version=v1.30.3 \
-      --apiserver-port=8443 \
-      --addons=[default-storageclass,storage-provisioner,ingress,dashboard,metrics-server]
+      --apiserver-port=8443
    ```
 
-3. run terraform command
+4. run terraform command
 
    ```bash
    cd terraform && terraform init && terraform apply -auto-approve
    ```
 
-4. expose ingress port
+5. expose ingress port
 
    ```bash
-   kubectl port-forward --pod-running-timeout=24h -n ingress-nginx service/ingress-nginx-controller :80 &
-   kubectl port-forward service/kubernetes-dashboard 9281:80 -n kubernetes-dashboard &
-   kubectl port-forward service/grafana 9282:80 -n monitoring &
+   kubectl port-forward --namespace ingress-nginx svc/ingress-nginx-controller :80 &
    ```
