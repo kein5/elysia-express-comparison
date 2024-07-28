@@ -1,0 +1,28 @@
+---
+controller:
+  replicaCount: 2 # コントローラのレプリカ数
+  service:
+    type: NodePort # Serviceのタイプ
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "10254"
+      prometheus.io/path: "/metrics"
+  resources:
+    limits:
+      cpu: 100m
+      memory: 200Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+defaultBackend:
+  enabled: true # デフォルトバックエンドの有効化
+  image:
+    repository: k8s.gcr.io/defaultbackend-amd64
+    tag: "1.5"
+  resources:
+    limits:
+      cpu: 10m
+      memory: 20Mi
+    requests:
+      cpu: 10m
+      memory: 20Mi
