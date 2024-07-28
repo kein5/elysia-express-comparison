@@ -15,10 +15,10 @@ controller:
       cpu: 100m
       memory: 200Mi
 defaultBackend:
-  enabled: true # デフォルトバックエンドの有効化
-  image:
-    repository: k8s.gcr.io/defaultbackend-amd64
-    tag: "1.5"
+  enabled: false
+  #   image:
+  #     repository: k8s.gcr.io/defaultbackend-amd64
+  #     tag: "1.5"
   resources:
     limits:
       cpu: 10m
