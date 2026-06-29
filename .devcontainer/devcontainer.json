@@ -4,7 +4,7 @@
   "name": "Kubernetes - Kubernetes-in-Docker",
   "image": "mcr.microsoft.com/vscode/devcontainers/base:bullseye",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {
       "dockerVersion": "latest",
       "upgradePackages": true,
       "enableNonRootDocker": true,
